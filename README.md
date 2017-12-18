@@ -26,4 +26,8 @@ token-choice
 
 `chooser`: The address that gets to choose
 
-`deadline: The chooser gets until this point to decide (roles reverse afterwards)
+`pick`: The chooser can pick `lbs` of `bleg` or `kgs` of `rube` any time before deadline (creator gets the other)
+
+`save`: The creator can save `lbs` of `bleg` or `kgs` of `rube` any time after deadline (chooser gets the other)
+
+`deadline`: The chooser gets until this point to decide (roles reverse afterwards)

@@ -41,7 +41,8 @@ contract Choice {
                  , DSToken rube_
                  , uint256 kgs_
                  , address chooser_
-                 , uint40 deadline_
+                 , uint40 open_
+                 , uint40 shut_
                  )
     {
         require(msg.sender == creator);
@@ -50,6 +51,8 @@ contract Choice {
         rube = rube_;
         kgs = kgs_;
         chooser = chooser_;
+        open = open_;
+        shut = shut_;
         how = 1;
         How(how);
     }

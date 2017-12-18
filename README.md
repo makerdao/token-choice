@@ -26,8 +26,10 @@ token-choice
 
 `chooser`: The address that gets to choose
 
-`pick`: The chooser can pick `lbs` of `bleg` or `kgs` of `rube` any time before deadline (creator gets the other)
+`pick`: The chooser can pick `lbs` of `bleg` or `kgs` of `rube` any time between `open` and `shut` (creator gets the other)
 
-`save`: The creator can save `lbs` of `bleg` or `kgs` of `rube` any time after deadline (chooser gets the other)
+`save`: The creator can save `lbs` of `bleg` or `kgs` of `rube` any time after `shut` (chooser gets the other)
 
-`deadline`: The chooser gets until this point to decide (roles reverse afterwards)
+`open`: The first time the chooser can make a choice
+
+`shut`: The first time the creator can make a choice (chooser has expired)

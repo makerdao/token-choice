@@ -27,7 +27,8 @@ contract Choice {
     address public creator;
     address public chooser;
 
-    uint40  public deadline;
+    uint40  public open;
+    uint40  public shut;
 
     function Choice() {
         creator = msg.sender;
@@ -55,7 +56,7 @@ contract Choice {
 
     function pick(bool pickBleg)
     {
-        require(now <= deadline);
+        require(open <= now || now < shut);
         require(msg.sender == chooser);
         if( pickBleg ) {
             bleg.push(chooser, lbs);
@@ -71,7 +72,7 @@ contract Choice {
 
     function save(bool saveBleg)
     {
-        require(now > deadline);
+        require(shut < now);
         require(msg.sender == creator);
         if( saveBleg ) {
             bleg.push(creator, lbs);
